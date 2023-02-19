@@ -26,7 +26,13 @@
     }
 
     let URL: string = window.location.href;
-    let language: string = URL.split('#')[1].split('/')[1]
+    let language: string;
+    if (URL.includes('#')) {
+        language = URL.split('#')[1].split('/')[1]
+    } else {
+        window.location.href = '/#/zh/'
+        location.reload();
+    }
 </script>
 
 
