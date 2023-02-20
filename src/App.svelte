@@ -14,6 +14,7 @@
 
     // Import Components
     import Header from "./Components/Header.svelte";
+    import Cursor from "./Components/Cursor.svelte";
 
     // Create Router
     const routes = {
@@ -22,6 +23,10 @@
         '/:language/about': About,
         '/:language/artworks': Artworks,
         '/:language/artworks/:id': Artwork,
+        '/:language/members': Artwork,
+        '/:language/members/:id': Artwork,
+        '/:language/record': Artwork,
+        '/:language/record/:id': Artwork,
         '*': PageNotFound,
     }
 
@@ -37,8 +42,9 @@
 
 
 <TailwindCSS/>
-<div class="bg-gradient-to-b from-gray-800 to-gray-900 top-0 w-screen h-screen fixed"></div>
+<div class="bg-gradient-to-br from-blue-900/60 to-black w-screen h-screen fixed z-[-1]"></div>
 <main>
+    <Cursor/>
     <Header language="{language}"/>
     <Router {routes}/>
 </main>
