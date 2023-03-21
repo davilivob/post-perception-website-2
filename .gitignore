@@ -24,4 +24,4 @@ dist-ssr
 *.sw?
 
 # Big Files
-src/assets/images/exhibition/head_photos/png/*
+public/images/exhibition/head_photos/png/*
