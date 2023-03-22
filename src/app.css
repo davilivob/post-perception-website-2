@@ -23,7 +23,7 @@
 
 
 body {
-    overscroll-behavior-y: none;
+    overflow-x: hidden;
     /*background-color: red;*/
 }
 
@@ -49,18 +49,18 @@ button:focus-visible {
 }
 
 
-/* width */
-::-webkit-scrollbar {
-    width: 0;
+*::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
 }
 
-/* Track */
-::-webkit-scrollbar-track {
-    background: black;
+*::-webkit-scrollbar-track {
+    background: hsla(0, 100%, 100%, 0);
+    /*background: hsla(0, 0%, 0%, 0);*/
 }
 
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background: white;
+*::-webkit-scrollbar-thumb {
+    background-color: hsla(10, 100%, 50%, 0.8);
+    border-radius: 10px;
+    /*border: 3px solid orange;*/
 }
-

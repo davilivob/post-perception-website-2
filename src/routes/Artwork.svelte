@@ -1,7 +1,6 @@
 <script lang="ts">
     import FacePic from "../Components/FacePic.svelte";
     import {information} from '../info';
-    import * as jq from 'jquery';
 
     export let params = {};
 
@@ -99,9 +98,7 @@
             <div class="justify-center flex flex-wrap gap-5">
                 {#each team_members as member}
                     <div class="mx-1 md:mx-2 w-48 md:w-64 font-light text-center flex flex-col justify-center items-center">
-                        <a href="/#/{params.language}/members/{all_info.school_ids[member.name]}">
-                            <FacePic id={all_info.school_ids[member.name]}></FacePic>
-                        </a>
+                        <FacePic id={all_info.school_ids[member.name]} lang="{params.language}"></FacePic>
                         <div class="desc text-xl mt-1">{member.name}</div>
                         <div class="overlay" onmouseover="">
                             <div class="text-sm">{member.title}</div>

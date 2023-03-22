@@ -19,7 +19,7 @@
 
     $: hovered_title_link = `
         <a href="#/${params.language}/artworks/${hovered_title.id}"
-            class="text-xl text-orange-200 hover:text-red-500 float-right italic inline border-b-2">
+            class="text-xl text-orange-200 hover:text-red-500 float-right italic inline border-b-2 break-all">
             ${is_en ? "Look Forward -->" : '查看詳情 -->'}
         </a>
     `;
