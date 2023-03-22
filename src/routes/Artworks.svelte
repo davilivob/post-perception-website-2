@@ -55,8 +55,9 @@
     <div class="flex flex-wrap relative left-0 my-10 mx-20 items-center justify-center text-center ">
         {#each artworks_info as team}
             <div class="p-3">
-                <a class="font-extrabold blur-2xl text-white text-2xl hover:text-3xl p-5 ease-in-out transition-all duration-700 cursor-pointer"
-                   on:click={mouse_on_title}
+                <a class="font-extrabold blur-2xl text-white text-2xl  hover:blur-3xl p-5 ease-in-out transition-all duration-1000 cursor-pointer"
+                   on:click={() => window.location.href = `#/${params.language}/artworks/${team.id}`}
+                   on:mouseover={mouse_on_title}
                    id={team.id}>{team.title} </a>
             </div>
         {/each}
@@ -73,7 +74,7 @@
             <h2 class="mb-5 py-2 inline">&nbsp;創作者：</h2>
             <p class="inline">
                 {#each artworks_info[hovered_title.id].members as member}
-                    <a class="cursor-pointer"
+                    <a class="cursor-pointer hover:border-b-2"
                        href="/#/{params.language}/members/{all_info.school_ids[member.name]}">{member.name}</a>
                     &nbsp;
                 {/each}

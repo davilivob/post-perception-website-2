@@ -1,6 +1,7 @@
 <script lang="ts">
     import FacePic from "../Components/FacePic.svelte";
     import {information} from '../info';
+    import * as jq from 'jquery';
 
     export let params = {};
 
@@ -16,10 +17,7 @@
     console.log(face_pic_width_vw)
     console.log(artwork_info);
 
-    let current_page = 'creator'
-    const URL_params = new URLSearchParams(window.location.search);
-    const URL_page: String = URL_params.get('page') || 'creator';
-    console.log(URL_page)
+    let current_page = 'creators'
 
     // This line in necessary to make TailwindCSS know what tags need to be used
     const tailwinds_tags = ['to-violet-900', 'to-violet-900/10', 'to-rose-900', 'to-rose-900/10', 'to-cyan-900', 'to-cyan-900/10', 'to-lime-900', 'to-lime-900/10'];
@@ -42,21 +40,33 @@
     function hide_page(page_name: String) {
         console.log(`${page_name} page is hidden`)
         document.getElementById(`${page_name}-page`).classList.add('hidden')
-        const page_btn = document.getElementById(`${page_name}-btn`)
     }
 
     function show_page(page_name: String) {
         console.log(`switched to ${page_name}`)
         document.getElementById(`${page_name}-page`).classList.remove('hidden')
-        document.getElementById
     }
+
+    const stop_red_btn = () => clearInterval(set_red_btn)
+
+    let set_red_btn = setInterval(() => {
+        if (document.getElementById('creators-btn').classList.contains(`to-rose-900/10`)) {
+            document.getElementById('creators-btn').classList.add(`to-rose-900`);
+            document.getElementById('creators-btn').classList.remove(`to-rose-900/10`);
+            stop_red_btn()
+        } else return
+    }, 100)
+
 
 </script>
 
 <a class="fa-solid fa-arrow-left text-2xl p-3 top-0" href="/#/{params.language}/artworks"></a>
-<h1 class="text-center text-5xl font-black my-1 text-white">{artwork_info.title}</h1>
-<h2 class="text-center text-xl font-bold my-1">{artwork_info.format}</h2>
-<h3 class="text-center text-xs font-extralight my-1">{artwork_info.media}</h3>
+
+<div class="mx-3 break-all">
+    <h1 class="text-center text-5xl font-black my-1 text-white">{artwork_info.title}</h1>
+    <h2 class="text-center text-xl font-bold my-1">{artwork_info.format}</h2>
+    <h3 class="text-center text-xs font-extralight my-1">{artwork_info.media}</h3>
+</div>
 
 <div class="mx-3 flex flex-col justify-center items-center text-center mt-3">
     <div class="flex flex-rol rounded-full m-auto items-center justify-center gap-3 px-2 py-1">
@@ -84,7 +94,7 @@
         {/each}
     </div>
 
-    <div class="w-11/12 bg-gradient-to-tr from-white/10 to-violet-600/10 rounded-xl m-5 text-black font-bolder">
+    <div class="w-11/12 bg-gradient-to-tr from-white/10 to-violet-600/10 rounded-xl m-5 text-gray-300 font-bolder">
         <div class="block p-10" id="creators-page">
             <div class="justify-center flex flex-wrap gap-5">
                 {#each team_members as member}
@@ -102,7 +112,7 @@
         </div>
         <div id="description-page" class="hidden p-5">
             <!--            <h3 class="text-3xl font-normal mb-10">{is_en ? 'Description' : '作品論述'}</h3>-->
-            <p class="sm:text-lg text-s text-left">{@html description}</p>
+            <p class="sm:text-lg text-s text-left">{@html description.replace('<br>', '<br><br>')}</p>
         </div>
         <div id="image_record-page" class="hidden">
             <h3 class="text-3xl font-normal mb-10">{is_en ? 'Description' : '作品論述'}</h3>

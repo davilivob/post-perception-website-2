@@ -23,6 +23,7 @@
     "vite": "^4.1.0"
   },
   "dependencies": {
+    "@types/jquery": "^3.5.16",
     "daisyui": "^2.51.4",
     "svelte-spa-router": "^3.3.0"
   }
