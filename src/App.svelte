@@ -21,7 +21,7 @@
     // Create Router
     const routes = {
         '/': RedirToZh,
-        '/:language/': Home,
+        '/:language/home': Home,
         '/:language/about': About,
         '/:language/artworks': Artworks,
         '/:language/artworks/:id': Artwork,
@@ -40,6 +40,7 @@
         window.location.href = '/#/zh/'
         location.reload();
     }
+
 </script>
 
 <TailwindCSS/>
@@ -47,7 +48,7 @@
 <main>
     <Cursor/>
     <Header language="{language}"/>
-    <div class="pt-16">
+    <div class="pt-12">
         <Router {routes}/>
     </div>
 </main>

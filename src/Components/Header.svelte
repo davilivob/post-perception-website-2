@@ -14,10 +14,11 @@
     }
 
     const links = [
-        {id: 0, en: 'about', zh: '關於我們'},
-        {id: 1, en: 'members', zh: '參展人員'},
-        {id: 2, en: 'artworks', zh: '參展作品'},
-        {id: 3, en: 'records', zh: '展場紀錄'},
+        {id: 0, en: 'home', zh: '首頁'},
+        {id: 1, en: 'about', zh: '關於我們'},
+        {id: 2, en: 'members', zh: '參展人員'},
+        {id: 3, en: 'artworks', zh: '參展作品'},
+        {id: 4, en: 'records', zh: '展場紀錄'},
     ];
 
     function open_menu() {
@@ -37,11 +38,11 @@
 
 <div id="navbar"
      class="fixed w-screen h-16 backdrop-blur-2xl z-30 flex flex-row items-center bg-gradient-to-t from-transparent to-cyan-900/30 shadow-2xl">
-    <div class="flex justify-between items-center float-right pl-5 font-extrabold">
+    <div class="flex justify-between items-center pl-5 font-extrabold">
         <a href="#/{language}/" class="font-extrabold">
             <h1 class="text-white not-italic text-4xl left-5 tracking-tighter" id="header-title">
                 <img src={Logo} alt="Logo" class="w-10 inline">
-                <a class="hidden sm:inline">{ is_en ? 'Post-Perception' : '後知後覺後' }</a>
+                <a class="hidden sm:inline hover:text-blue-900 shadow-black transform-all duration-500 ease-in-out">{ is_en ? 'Post-Perception' : '後知後覺後' }</a>
             </h1>
         </a>
     </div>
