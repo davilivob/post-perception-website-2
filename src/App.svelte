@@ -21,6 +21,7 @@
     // Create Router
     const routes = {
         '/': RedirToZh,
+        '/:language/': RedirToZh,
         '/:language/home': Home,
         '/:language/about': About,
         '/:language/artworks': Artworks,
