@@ -1,5 +1,5 @@
 <script lang="ts">
-    import {information} from '../info';
+    import {information} from "../lib/info";
 
     export let params = {
         language: undefined
@@ -51,8 +51,8 @@
     }, 1000)
 
 </script>
-<div class="">
-    <div class="flex flex-wrap relative left-0 my-10 mx-20 items-center justify-center text-center ">
+<div class="pt-20">
+    <div class="flex flex-wrap relative left-0 mx-20 items-center justify-center text-center ">
         {#each artworks_info as team}
             <div class="p-3">
                 <a class="font-extrabold blur-2xl text-white text-2xl  hover:blur-3xl p-5 ease-in-out transition-all duration-1000 cursor-pointer"

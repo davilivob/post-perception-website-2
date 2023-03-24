@@ -1,7 +1,7 @@
 <script>
     import * as THREE from "three";
     import * as TWEEN from "tween";
-    import {loadModel} from "../LoadModel";
+    import {loadModel} from "../lib/LoadModel";
     import {onMount} from "svelte";
 
 

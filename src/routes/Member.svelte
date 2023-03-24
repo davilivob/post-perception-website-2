@@ -1,6 +1,6 @@
 <script>
     import FacePic from "../Components/FacePic.svelte";
-    import {information} from "../info";
+    import {information} from "../lib/info";
 
     export let params = {};
     const is_en = params.language == 'en';

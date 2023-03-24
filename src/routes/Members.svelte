@@ -1,5 +1,5 @@
 <script lang="ts">
-    import {information} from '../info';
+    import {information} from '../lib/info';
     import FacePic from "../Components/FacePic.svelte";
 
     export let params = {
