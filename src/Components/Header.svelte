@@ -1,6 +1,6 @@
 <script lang="ts">
     // Import Assets
-    import Logo from '../../public/images/website/logo.svg'
+    import Logo from '../../public/images/website/logo/logo200.gif'
     import {Menu, Close} from "svelte-ionicons";
 
     export let language: string = 'zh';
@@ -38,11 +38,12 @@
 
 <div id="navbar"
      class="fixed w-screen h-16 backdrop-blur-2xl z-30 flex flex-row items-center bg-gradient-to-t from-transparent to-cyan-900/30 shadow-2xl">
-    <div class="flex justify-between items-center pl-5 font-extrabold">
+    <div class="flex justify-between items-center font-extrabold">
         <a href="#/{language}/" class="font-extrabold">
-            <h1 class="text-white not-italic text-4xl left-5 tracking-tighter" id="header-title">
-                <img src={Logo} alt="Logo" class="w-10 inline">
-                <a class="hidden sm:inline hover:text-blue-900 shadow-black transform-all duration-500 ease-in-out">{ is_en ? 'Post-Perception' : '後知後覺後' }</a>
+            <h1 class="text-white not-italic text-4xl left-5 tracking-tighter flex flex-row justify-center items-center"
+                id="header-title">
+                <img src={Logo} alt="Logo" class="h-16 ">
+                <a class="hidden sm:inline shadow-black transform-all duration-500 ease-in-out">{ is_en ? 'Post-Perception' : '後知後覺後' }</a>
             </h1>
         </a>
     </div>

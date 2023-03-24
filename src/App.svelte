@@ -49,7 +49,7 @@
 <main>
     <Cursor/>
     <Header language="{language}"/>
-    <div class="pt-12">
+    <div class="pt-8">
         <Router {routes}/>
     </div>
 </main>
