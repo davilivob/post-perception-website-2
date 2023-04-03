@@ -168,12 +168,17 @@
         <div out:fly={{y: 30}} id="description-page" class="p-0 flex flex-wrap flex-row items-center justify-center">
 
 <!--            Image Progress Bar-->
-            <div class="w-[98.5%] bg-white-10">
-                <div class="bg-gradient-to-br from-violet-600 to-pink-800 h-1" style="width: {parseInt((image_num) * 100 / (img_range[0] - 1)).toString()}%"></div>
+            <div class="w-[96%] bg-white-10 flex flex-row justify-center">
+                <div class="bg-gradient-to-l from-violet-500 to-transparent h-1 transition-all duration-500"
+                     style="width: {parseInt((image_num) * 100 / (img_range[0] - 1) / 4).toString()}%"></div>
+                <div class="bg-gradient-to-r from-violet-500 to-orange-500 h-1 transition-all duration-300"
+                     style="width: {parseInt((image_num) * 100 / (img_range[0] - 1) * 2 / 4).toString()}%"></div>
+                <div class="bg-gradient-to-r from-orange-500 to-transparent h-1 transition-all duration-300"
+                     style="width: {parseInt((image_num) * 100 / (img_range[0] - 1) / 4).toString()}%"></div>
             </div>
 
             <div class="w-full h-[80vh] bg-no-repeat bg-cover bg-center rounded-tl-xl rounded-tr-xl rounded-br-xl"
-                   style="background-image: url('/images/exhibition/artwork_photos/{artwork_info.id}/{image_num}.jpg');">
+                   style="background-image:url('/images/exhibition/artwork_photos/{artwork_info.id}/{image_num}.jpg'), url('/images/website/logo/logo200.gif');">
 
                 <div class="top-0 sm:text-lg text-s text-left break-after-avoid md:w-1/3 h-full text-transparent transition-all duration-500 ease-in-out rounded-tl-xl rounded-tr-xl rounded-br-xl md:rounded-br-none md:rounded-tr-none"
                     id="description-text-container">
@@ -187,7 +192,6 @@
                         cursor-pointer shadow-inner shadow-black ">
                         <a class="fa-solid fa-chevron-left hover:text-black transition-colors duration-200 p-2 px-3" on:click={last_img}></a>
                         <a class="fa-regular fa-book hover:text-black transition-colors duration-200 p-2 px-3" on:click={toggle_description}></a>
-<!--                        <a class="fa-regular fa-users hover:text-black transition-colors duration-200 p-2 px-3" on:click={toggle_team_members}></a>-->
                         <a class="fa-solid fa-chevron-right hover:text-black transition-colors duration-200 p-2 px-3" on:click={next_img}></a>
                     </div>
                 </div>
