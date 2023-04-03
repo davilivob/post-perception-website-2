@@ -1,7 +1,6 @@
 <script lang="ts">
     // Import Assets
     import Logo from '../../public/images/website/logo/logo200.gif'
-    import {Menu, Close} from "svelte-ionicons";
 
     export let language: string = 'zh';
     let is_en: boolean = language === 'en';
