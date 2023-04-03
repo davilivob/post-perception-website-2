@@ -12,7 +12,7 @@
     import RedirToZh from "./routes/RedirToZh.svelte";
     import Members from "./routes/Members.svelte";
     import Member from "./routes/Member.svelte";
-
+    import Redirector from "./routes/Redirector.svelte";
 
     // Import Components
     import Header from "./Components/Header.svelte";
@@ -28,6 +28,7 @@
         '/:language/artworks/:id': Artwork,
         '/:language/members': Members,
         '/:language/members/:id': Member,
+        '/redirect/:path': Redirector,
         // '/:language/record': Artwork,
         // '/:language/record/:id': Artwork,
         '*': PageNotFound,
@@ -45,7 +46,7 @@
 </script>
 
 <TailwindCSS/>
-<div class="bg-gradient-to-br from-blue-900/60 to-black w-screen h-screen fixed z-[-1]"></div>
+<div class="bg-gradient-to-br from-blue-900/90 to-black w-screen h-screen fixed z-[-1]"></div>
 <main>
     <Cursor/>
     <Header language="{language}"/>
