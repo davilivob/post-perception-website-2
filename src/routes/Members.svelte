@@ -11,16 +11,13 @@
     const all_info: object = $information[params.language];
     const members_info: object = all_info.admins
     let members: Array<Object> = []
-    for (const [key, value] of Object.entries(all_info.school_ids)) {
+    for (const [key, value] of Object.entries(all_info.member_names)) {
         members.push({
-            name: key,
-            id: value,
+            name: value,
+            id: key,
         })
     }
 
-    const get_school_id: Int = (name: String) => {
-        return all_info.school_ids[name]
-    }
 
     let current_page = 'creators'
 
@@ -123,9 +120,9 @@
                 <div class="flex flex-row flex-wrap justify-center gap-4 border-b-1 border-white/20 p-10">
                     {#each admin_team.members as member}
                         <div class="">
-                            <FacePic name={member.name} id={get_school_id(member.name)} lang="{params.language}"/>
+                            <FacePic id={member.id} lang="{params.language}"/>
                             <a class="font-extrabold">{member.title}</a><br>
-                            <a>{member.name}</a>
+                            <a>{all_info.member_names[member.id]}</a>
                         </div>
                     {/each}
                 </div>

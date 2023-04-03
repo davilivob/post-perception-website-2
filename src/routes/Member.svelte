@@ -6,12 +6,7 @@
     const is_en = params.language == 'en';
     let all_info = $information[params.language];
 
-    const school_ids = all_info.school_ids;
-    let name = '';
-    Object.keys(school_ids).forEach((key) => {
-        if (school_ids[key] == params.id) name = key;
-    });
-    name = name
+    const name = all_info.member_names[params.id];
 
 </script>
 <div class="flex flex-col mx-10 my-12 justify-center items-center text-center gap-3">

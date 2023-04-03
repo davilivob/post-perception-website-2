@@ -2,68 +2,64 @@ import {readable} from 'svelte/store';
 
 const information_json = {
     zh: {
-        school_ids: {
-            "白維田": 1,
-            "蒲欣妤": 2,
-            "許睿智": 3,
-            "朱紹筠": 4,
-            "張珈瑄": 6,
-            "吳黛葳": 5,
-            "高哲淯": 7,
-            "蔡尚騰": 8,
-            "翁國愷": 10,
-            // "葉志翔": 11,
-            // "張沛晴": 13,
-            "李頡": 14,
-            "余宗霖": 15,
-            "蔡政澔": 16,
-            "唐昱翔": 17,
-            "潘玟瑜": 18,
-            "廖婉淩": 19,
-            "江愷希": 20,
-            "莊恩齊": 21,
-            "陳政維": 22,
-            "吳佩純": 23,
-            // "何晨瑜": 24,
-            "陳妍姍": 25,
-            "林琮澔": 26,
-            "陳誌陽": 27,
-            // "魏惇儀": 28,
-            "簡祐呈": 29,
-            "林慧儒": 30,
-            "徐浩瀚": 31,
-            "邱傑義": 32,
-            "韓承芯": 33,
-            "劉吉榮": 34,
-            "楊茗柯": 35,
-            "胡品孜": 36,
-            "李士朋": 37,
-            "王嘉郁": 38,
-            "丁常恩": 39,
-            "王暉蒽": 40,
-            "朱亦萱": 42,
-            "蘇乃俞": 58,
-            "林珈誼": 59,
-            "周詩涵": 60,
+        member_names: {
+            1: "白維田",
+            2: "蒲欣妤",
+            3: "許睿智",
+            4: "朱紹筠",
+            5: "張珈瑄",
+            6: "吳黛葳",
+            7: "高哲淯",
+            8: "蔡尚騰",
+            10: "翁國愷",
+            14: "李頡",
+            15: "余宗霖",
+            16: "蔡政澔",
+            17: "唐昱翔",
+            18: "潘玟瑜",
+            19: "廖婉淩",
+            20: "江愷希",
+            21: "莊恩齊",
+            22: "陳政維",
+            23: "吳佩純",
+            25: "陳妍姍",
+            26: "林琮澔",
+            27: "陳誌陽",
+            29: "簡祐呈",
+            30: "林慧儒",
+            31: "徐浩瀚",
+            32: "邱傑義",
+            33: "韓承芯",
+            34: "劉吉榮",
+            35: "楊茗柯",
+            36: "胡品孜",
+            37: "李士朋",
+            38: "王嘉郁",
+            39: "丁常恩",
+            40: "王暉蒽",
+            42: "朱亦萱",
+            58: "蘇乃俞",
+            59: "林珈誼",
+            60: "周詩涵",
         },
         art_teams: [
             {
                 id: 0,
                 members: [
                     {
-                        name: "莊恩齊",
+                        id: 21,
                         title: "組長",
                     },
                     {
-                        name: "陳政維",
+                        id: 22,
                         title: "3D 建模、動畫設計",
                     },
                     {
-                        name: "邱傑義",
+                        id: 32,
                         title: "網頁程式設計",
                     },
                     {
-                        name: "劉吉榮",
+                        id: 34,
                         title: "3D 互動設計",
                     }
                 ],
@@ -89,27 +85,27 @@ const information_json = {
                 id: 1,
                 members: [
                     {
-                        name: "王暉蒽",
+                        id: 40,
                         title: "",
                     },
                     {
-                        name: "徐浩瀚",
+                        id: 31,
                         title: "",
                     },
                     {
-                        name: "朱亦萱",
+                        id: 42,
                         title: "",
                     },
                     {
-                        name: "蒲欣妤",
+                        id: 2,
                         title: "",
                     },
                     {
-                        name: "唐昱翔",
+                        id: 17,
                         title: "",
                     },
                     {
-                        name: "蔡尚騰",
+                        id: 8,
                         title: "",
                     }
                 ],
@@ -132,23 +128,23 @@ const information_json = {
                 id: 2,
                 members: [
                     {
-                        name: "胡品孜",
+                        id: 36,
                         title: "",
                     },
                     {
-                        name: "廖婉淩",
+                        id: 19,
                         title: "",
                     },
                     {
-                        name: "白維田",
+                        id: 1,
                         title: "",
                     },
                     {
-                        name: "吳佩純",
+                        id: 23,
                         title: "",
                     },
                     {
-                        name: "吳黛葳",
+                        id: 5,
                         title: "",
                     }
                 ],
@@ -168,27 +164,27 @@ const information_json = {
                 id: 3,
                 members: [
                     {
-                        name: "楊茗柯",
+                        id: 35,
                         title: "",
                     },
                     {
-                        name: "李頡",
+                        id: 14,
                         title: "",
                     },
                     {
-                        name: "林珈誼",
+                        id: 59,
                         title: "",
                     },
                     {
-                        name: "李士朋",
+                        id: 37,
                         title: "",
                     },
                     {
-                        name: "韓承芯",
+                        id: 33,
                         title: "",
                     },
                     {
-                        name: "林慧儒",
+                        id: 30,
                         title: "",
                     }
                 ],
@@ -221,15 +217,15 @@ const information_json = {
                 id: 4,
                 members: [
                     {
-                        name: "高哲淯",
+                        id: 7,
                         title: "",
                     },
                     {
-                        name: "簡祐呈",
+                        id: 29,
                         title: "",
                     },
                     {
-                        name: "蘇乃俞",
+                        id: 58,
                         title: "",
                     }
                 ],
@@ -253,19 +249,19 @@ const information_json = {
                 id: 5,
                 members: [
                     {
-                        name: "陳誌陽",
+                        id: 27,
                         title: "",
                     },
                     {
-                        name: "陳妍姍",
+                        id: 25,
                         title: "",
                     },
                     {
-                        name: "江愷希",
+                        id: 20,
                         title: "",
                     },
                     {
-                        name: "張珈瑄",
+                        id: 6,
                         title: "",
                     },
                 ],
@@ -290,15 +286,15 @@ const information_json = {
                 id: 6,
                 members: [
                     {
-                        name: "朱紹筠",
+                        id: 4,
                         title: "",
                     },
                     {
-                        name: "王嘉郁",
+                        id: 38,
                         title: "",
                     },
                     {
-                        name: "翁國愷",
+                        id: 10,
                         title: "",
                     }
                 ],
@@ -321,11 +317,11 @@ const information_json = {
                 id: 7,
                 members: [
                     {
-                        name: "丁常恩",
+                        id: 39,
                         title: "",
                     },
                     {
-                        name: "蔡政澔",
+                        id: 16,
                         title: "",
                     }
                 ],
@@ -349,7 +345,7 @@ const information_json = {
                 id: 8,
                 members: [
                     {
-                        name: "周詩涵",
+                        id: 60,
                         title: "",
                     }
                 ],
@@ -383,7 +379,7 @@ const information_json = {
                 id: 9,
                 members: [
                     {
-                        name: "余宗霖",
+                        id: 15,
                         title: "",
                     }
                 ],
@@ -408,7 +404,7 @@ const information_json = {
                 id: 10,
                 members: [
                     {
-                        name: "許睿智",
+                        id: 3,
                         title: "",
                     }
                 ],
@@ -437,7 +433,7 @@ const information_json = {
                 id: 11,
                 members: [
                     {
-                        name: "潘玟瑜",
+                        id: 18,
                         title: "",
                     }
                 ],
@@ -460,7 +456,7 @@ const information_json = {
                 id: 12,
                 members: [
                     {
-                        name: "林琮澔",
+                        id: 26,
                         title: "",
                     }
                 ],
@@ -487,11 +483,11 @@ const information_json = {
                 department: "總召",
                 members: [
                     {
-                        name: "徐浩瀚",
+                        id: 31,
                         title: "總召",
                     },
                     {
-                        name: "王嘉郁",
+                        id: 38,
                         title: "副總召",
                     }
                 ]
@@ -501,11 +497,11 @@ const information_json = {
                 department: "文書",
                 members: [
                     {
-                        name: "唐昱翔",
+                        id: 17,
                         title: "文書",
                     },
                     {
-                        name: "白維田",
+                        id: 1,
                         title: "文書",
                     }
                 ]
@@ -515,7 +511,7 @@ const information_json = {
                 department: "總務",
                 members: [
                     {
-                        name: "韓承芯",
+                        id: 33,
                         title: "總務",
                     }
                 ]
@@ -525,11 +521,11 @@ const information_json = {
                 department: "翻譯",
                 members: [
                     {
-                        name: "林珈誼",
+                        id: 59,
                         title: "組長",
                     },
                     {
-                        name: "劉吉榮",
+                        id: 34,
                         title: "組員",
                     }
                 ]
@@ -539,35 +535,35 @@ const information_json = {
                 department: "視覺組",
                 members: [
                     {
-                        name: "翁國愷",
+                        id: 10,
                         title: "組長",
                     },
                     {
-                        name: "簡祐呈",
+                        id: 29,
                         title: "影片",
                     },
                     {
-                        name: "陳政維",
+                        id: 22,
                         title: "影片",
                     },
                     {
-                        name: "蔡政澔",
+                        id: 16,
                         title: "文宣",
                     },
                     {
-                        name: "吳佩純",
+                        id: 23,
                         title: "文宣",
                     },
                     {
-                        name: "胡品孜",
+                        id: 36,
                         title: "文宣",
                     },
                     {
-                        name: "廖婉淩",
+                        id: 19,
                         title: "商品",
                     },
                     {
-                        name: "周詩涵",
+                        id: 60,
                         title: "商品",
                     }
                 ]
@@ -577,27 +573,27 @@ const information_json = {
                 department: "公關組",
                 members: [
                     {
-                        name: "陳妍姍",
+                        id: 25,
                         title: "組長",
                     },
                     {
-                        name: "林慧儒",
+                        id: 30,
                         title: "贊助",
                     },
                     {
-                        name: "楊茗柯",
+                        id: 35,
                         title: "贊助",
                     },
                     {
-                        name: "李士朋",
+                        id: 37,
                         title: "廣告",
                     },
                     {
-                        name: "余宗霖",
+                        id: 15,
                         title: "廣告",
                     },
                     {
-                        name: "王暉蒽",
+                        id: 40,
                         title: "廣告",
                     }
                 ]
@@ -607,19 +603,19 @@ const information_json = {
                 department: "活動組",
                 members: [
                     {
-                        name: "陳誌陽",
+                        id: 27,
                         title: "組長",
                     },
                     {
-                        name: "江愷希",
+                        id: 20,
                         title: "企劃",
                     },
                     {
-                        name: "張珈瑄",
+                        id: 6,
                         title: "企劃",
                     },
                     {
-                        name: "丁常恩",
+                        id: 39,
                         title: "組員",
                     }
                 ]
@@ -629,27 +625,27 @@ const information_json = {
                 department: "佈展組",
                 members: [
                     {
-                        name: "李頡",
+                        id: 14,
                         title: "組長",
                     },
                     {
-                        name: "高哲淯",
+                        id: 7,
                         title: "組員",
                     },
                     {
-                        name: "蒲欣妤",
+                        id: 2,
                         title: "組員",
                     },
                     {
-                        name: "吳黛葳",
+                        id: 5,
                         title: "組員",
                     },
                     {
-                        name: "朱紹筠",
+                        id: 4,
                         title: "組員",
                     },
                     {
-                        name: "邱傑義",
+                        id: 32,
                         title: "組員",
                     }
                 ]
@@ -659,19 +655,19 @@ const information_json = {
                 department: "事務組",
                 members: [
                     {
-                        name: "朱亦萱",
+                        id: 42,
                         title: "組長",
                     },
                     {
-                        name: "潘玟瑜",
+                        id: 18,
                         title: "組員",
                     },
                     {
-                        name: "劉吉榮",
+                        id: 34,
                         title: "組員",
                     },
                     {
-                        name: "蔡尚騰",
+                        id: 8,
                         title: "機動",
                     }
                 ]
@@ -681,15 +677,15 @@ const information_json = {
                 department: "紀錄組",
                 members: [
                     {
-                        name: "莊恩齊",
+                        id: 21,
                         title: "組長",
                     },
                     {
-                        name: "許睿智",
+                        id: 3,
                         title: "組員",
                     },
                     {
-                        name: "林琮澔",
+                        id: 26,
                         title: "組員",
                     }
                 ]
@@ -699,19 +695,19 @@ const information_json = {
                 department: "網頁組",
                 members: [
                     {
-                        name: "邱傑義",
+                        id: 32,
                         title: "組長",
                     },
                     {
-                        name: "李士朋",
+                        id: 37,
                         title: "組員",
                     },
                     {
-                        name: "林珈誼",
+                        id: 59,
                         title: "組員",
                     },
                     {
-                        name: "劉吉榮",
+                        id: 34,
                         title: "組員",
                     }
                 ]
@@ -719,74 +715,69 @@ const information_json = {
         ]
     },
     en: {
-        school_ids: {
-            "白維田": 1,
-            "蒲欣妤": 2,
-            "許睿智": 3,
-            "朱紹筠": 4,
-            "張珈瑄": 6,
-            "吳黛葳": 5,
-            "高哲淯": 7,
-            "蔡尚騰": 8,
-            "翁國愷": 10,
-            // "葉志翔": 11,
-            // "張沛晴": 13,
-            "李頡": 14,
-            "余宗霖": 15,
-            "蔡政澔": 16,
-            "唐昱翔": 17,
-            "潘玟瑜": 18,
-            "廖婉淩": 19,
-            "江愷希": 20,
-            "莊恩齊": 21,
-            "陳政維": 22,
-            "吳佩純": 23,
-            // "何晨瑜": 24,
-            "陳妍姍": 25,
-            "林琮澔": 26,
-            "陳誌陽": 27,
-            // "魏惇儀": 28,
-            "簡祐呈": 29,
-            "林慧儒": 30,
-            "徐浩瀚": 31,
-            "邱傑義": 32,
-            "韓承芯": 33,
-            "劉吉榮": 34,
-            "楊茗柯": 35,
-            "胡品孜": 36,
-            "李士朋": 37,
-            "王嘉郁": 38,
-            "丁常恩": 39,
-            "王暉蒽": 40,
-            "朱亦萱": 42,
-            "蘇乃俞": 58,
-            "林珈誼": 59,
-            "周詩涵": 60,
+        member_names: {
+            1: "Pi Wei Tian",
+            2: "Poo Xin Yu",
+            3: "Hsueh Ruei-Jhih",
+            4: "Chu Shao-Chun",
+            5: "Chiang Jia Hsuan",
+            6: "Wu Dai Wei",
+            7: "Guo Zhe Yu",
+            8: "Tsai Shang-Teng",
+            10: "Weng Kuo Kai",
+            14: "Lee Jia",
+            15: "Yu Tsung Lin",
+            16: "Tsai Cheng-Hao",
+            17: "Tang Yu Xiang",
+            18: "Peng Wen Yu",
+            19: "Liao Wan Ling",
+            20: "Chiang Kai Hsi",
+            21: "Chuang En Chieh",
+            22: "Chen Cheng Wei",
+            23: "Wu Pei Chun",
+            25: "Chien Yen Sheng",
+            26: "Lin Tsung Hao",
+            27: "Chen Chih Yang",
+            29: "Jian Yu Cheng",
+            30: "Lin Hui Ru",
+            31: "Hsu Hao Han",
+            32: "Chiu Chieh Yi",
+            33: "Han Cheng Hsin",
+            34: "Liou Ji Rong",
+            35: "Yang Ming Ke",
+            36: "Hu Pin Zi",
+            37: "Lee Shih Peng",
+            38: "Wang Chia Yu",
+            39: "Ding Chang En",
+            40: "Wang Hui En",
+            42: "Chiu Yi Hsuan",
+            58: "Tzu Nai Yu",
+            59: "Lin Jia Yi",
+            60: "Chou Shih Han",
         },
-        exhibition: {},
         art_teams: [
             {
                 id: 0,
                 members: [
                     {
-                        name: "莊恩齊",
+                        id: 21,
                         title: "Project Manager",
                     },
                     {
-                        name: "陳政維",
+                        id: 22,
                         title: "Art Director",
                     },
                     {
-                        name: "邱傑義",
+                        id: 32,
                         title: "Software Engineer",
                     },
                     {
-                        name: "劉吉榮",
+                        id: 34,
                         title: "Interactive & Creative Designer",
                     }
                 ],
                 title: "FRONTIER_02",
-                format: "網路程式運算影像",
+                format: "Internet-based Interactive Video Installation",
                 description: `
                     21世紀以降，互聯網已然發展成與現實相互糾纏的鏡像世界，使用介面的演進，大大加速了這一進程，<!--
                     -->太空殖民的時代尚未到來，互聯網可能先一步成為近未來的殖民地。<!--
@@ -794,7 +785,7 @@ const information_json = {
                     -->並使用這些資料建設一座龐雜卻有序的環形太空站。<!--
                     -->身處世界各地的人們，不約而同地透過某種介面登上了這座太空站，共構出現今的互聯網生態，持續開拓 The Next Frontier。
                 `,
-                media: "膠合玻璃, 電子材料, 彩色有聲, 18'00\", 彩⾊/有聲, 2023",
+                media: "Glass, Electronic Materials, Color Sound, 18'00\", Color/Sound",
                 size: "200cm x 200cm x 200cm",
                 record: {
                     images: [2, 0],
@@ -807,27 +798,27 @@ const information_json = {
                 id: 1,
                 members: [
                     {
-                        name: "王暉蒽",
+                        id: 40,
                         title: "",
                     },
                     {
-                        name: "徐浩瀚",
+                        id: 31,
                         title: "",
                     },
                     {
-                        name: "朱亦萱",
+                        id: 42,
                         title: "",
                     },
                     {
-                        name: "蒲欣妤",
+                        id: 2,
                         title: "",
                     },
                     {
-                        name: "唐昱翔",
+                        id: 17,
                         title: "",
                     },
                     {
-                        name: "蔡尚騰",
+                        id: 8,
                         title: "",
                     }
                 ],
@@ -844,7 +835,7 @@ const information_json = {
                      The meaning of the audience has already been subverted,
                      and this series of works attempts to encourage viewers to rethink the implications of "audience to audience".
                 `,
-                media: "影像互動裝置",
+                media: "Video Interactive Installation",
                 size: "", record: {
                     images: [5, 0],
                     videos: [0, 1]
@@ -854,23 +845,23 @@ const information_json = {
                 id: 2,
                 members: [
                     {
-                        name: "胡品孜",
+                        id: 36,
                         title: "",
                     },
                     {
-                        name: "廖婉淩",
+                        id: 19,
                         title: "",
                     },
                     {
-                        name: "白維田",
+                        id: 1,
                         title: "",
                     },
                     {
-                        name: "吳佩純",
+                        id: 23,
                         title: "",
                     },
                     {
-                        name: "吳黛葳",
+                        id: 5,
                         title: "",
                     }
                 ],
@@ -893,27 +884,27 @@ const information_json = {
                 id: 3,
                 members: [
                     {
-                        name: "楊茗柯",
+                        id: 35,
                         title: "",
                     },
                     {
-                        name: "李頡",
+                        id: 14,
                         title: "",
                     },
                     {
-                        name: "林珈誼",
+                        id: 59,
                         title: "",
                     },
                     {
-                        name: "李士朋",
+                        id: 37,
                         title: "",
                     },
                     {
-                        name: "韓承芯",
+                        id: 33,
                         title: "",
                     },
                     {
-                        name: "林慧儒",
+                        id: 30,
                         title: "",
                     }
                 ],
@@ -955,15 +946,15 @@ const information_json = {
                 id: 4,
                 members: [
                     {
-                        name: "高哲淯",
+                        id: 7,
                         title: "",
                     },
                     {
-                        name: "簡祐呈",
+                        id: 29,
                         title: "",
                     },
                     {
-                        name: "蘇乃俞",
+                        id: 58,
                         title: "",
                     }
                 ],
@@ -983,19 +974,19 @@ const information_json = {
                 id: 5,
                 members: [
                     {
-                        name: "陳誌陽",
+                        id: 27,
                         title: "",
                     },
                     {
-                        name: "陳妍姍",
+                        id: 25,
                         title: "",
                     },
                     {
-                        name: "江愷希",
+                        id: 20,
                         title: "",
                     },
                     {
-                        name: "張珈瑄",
+                        id: 6,
                         title: "",
                     },
                 ],
@@ -1016,15 +1007,15 @@ const information_json = {
                 id: 6,
                 members: [
                     {
-                        name: "朱紹筠",
+                        id: 4,
                         title: "",
                     },
                     {
-                        name: "王嘉郁",
+                        id: 38,
                         title: "",
                     },
                     {
-                        name: "翁國愷",
+                        id: 10,
                         title: "",
                     }
                 ],
@@ -1051,11 +1042,11 @@ const information_json = {
                 id: 7,
                 members: [
                     {
-                        name: "丁常恩",
+                        id: 39,
                         title: "",
                     },
                     {
-                        name: "蔡政澔",
+                        id: 16,
                         title: "",
                     }
                 ],
@@ -1083,7 +1074,7 @@ const information_json = {
                 id: 8,
                 members: [
                     {
-                        name: "周詩涵",
+                        id: 60,
                         title: "",
                     }
                 ],
@@ -1104,7 +1095,7 @@ const information_json = {
                 id: 9,
                 members: [
                     {
-                        name: "余宗霖",
+                        id: 15,
                         title: "",
                     }
                 ],
@@ -1125,7 +1116,7 @@ const information_json = {
                 id: 10,
                 members: [
                     {
-                        name: "許睿智",
+                        id: 3,
                         title: "",
                     }
                 ],
@@ -1147,7 +1138,7 @@ const information_json = {
                 id: 11,
                 members: [
                     {
-                        name: "潘玟瑜",
+                        id: 18,
                         title: "",
                     }
                 ],
@@ -1166,7 +1157,7 @@ const information_json = {
                 id: 12,
                 members: [
                     {
-                        name: "林琮澔",
+                        id: 26,
                         title: "",
                     }
                 ],
@@ -1190,11 +1181,11 @@ const information_json = {
                 department: "president",
                 members: [
                     {
-                        name: "徐浩瀚",
+                        id: 31,
                         title: "President",
                     },
                     {
-                        name: "王嘉郁",
+                        id: 38,
                         title: "Vice President",
                     }
                 ]
@@ -1204,11 +1195,11 @@ const information_json = {
                 department: "文書",
                 members: [
                     {
-                        name: "唐昱翔",
+                        id: 17,
                         title: "文書",
                     },
                     {
-                        name: "白維田",
+                        id: 1,
                         title: "文書",
                     }
                 ]
@@ -1218,7 +1209,7 @@ const information_json = {
                 department: "總務",
                 members: [
                     {
-                        name: "韓承芯",
+                        id: 33,
                         title: "總務",
                     }
                 ]
@@ -1228,11 +1219,11 @@ const information_json = {
                 department: "翻譯",
                 members: [
                     {
-                        name: "林珈誼",
+                        id: 59,
                         title: "組長",
                     },
                     {
-                        name: "劉吉榮",
+                        id: 34,
                         title: "組員",
                     }
                 ]
@@ -1242,35 +1233,35 @@ const information_json = {
                 department: "視覺組",
                 members: [
                     {
-                        name: "翁國愷",
+                        id: 10,
                         title: "組長",
                     },
                     {
-                        name: "簡祐呈",
+                        id: 29,
                         title: "影片",
                     },
                     {
-                        name: "陳政維",
+                        id: 22,
                         title: "影片",
                     },
                     {
-                        name: "蔡政澔",
+                        id: 16,
                         title: "文宣",
                     },
                     {
-                        name: "吳佩純",
+                        id: 23,
                         title: "文宣",
                     },
                     {
-                        name: "胡品孜",
+                        id: 36,
                         title: "文宣",
                     },
                     {
-                        name: "廖婉淩",
+                        id: 19,
                         title: "商品",
                     },
                     {
-                        name: "周詩涵",
+                        id: 60,
                         title: "商品",
                     }
                 ]
@@ -1280,27 +1271,27 @@ const information_json = {
                 department: "公關組",
                 members: [
                     {
-                        name: "陳妍姍",
+                        id: 25,
                         title: "組長",
                     },
                     {
-                        name: "林慧儒",
+                        id: 30,
                         title: "贊助",
                     },
                     {
-                        name: "楊茗柯",
+                        id: 35,
                         title: "贊助",
                     },
                     {
-                        name: "李士朋",
+                        id: 37,
                         title: "廣告",
                     },
                     {
-                        name: "余宗霖",
+                        id: 15,
                         title: "廣告",
                     },
                     {
-                        name: "王暉蒽",
+                        id: 40,
                         title: "廣告",
                     }
                 ]
@@ -1310,19 +1301,19 @@ const information_json = {
                 department: "活動組",
                 members: [
                     {
-                        name: "陳誌陽",
+                        id: 27,
                         title: "組長",
                     },
                     {
-                        name: "江愷希",
+                        id: 20,
                         title: "企劃",
                     },
                     {
-                        name: "張珈瑄",
+                        id: 6,
                         title: "企劃",
                     },
                     {
-                        name: "丁常恩",
+                        id: 39,
                         title: "組員",
                     }
                 ]
@@ -1332,27 +1323,27 @@ const information_json = {
                 department: "佈展組",
                 members: [
                     {
-                        name: "李頡",
+                        id: 14,
                         title: "組長",
                     },
                     {
-                        name: "高哲淯",
+                        id: 7,
                         title: "組員",
                     },
                     {
-                        name: "蒲欣妤",
+                        id: 2,
                         title: "組員",
                     },
                     {
-                        name: "吳黛葳",
+                        id: 6,
                         title: "組員",
                     },
                     {
-                        name: "朱紹筠",
+                        id: 4,
                         title: "組員",
                     },
                     {
-                        name: "邱傑義",
+                        id: 32,
                         title: "組員",
                     }
                 ]
@@ -1362,19 +1353,19 @@ const information_json = {
                 department: "事務組",
                 members: [
                     {
-                        name: "朱亦萱",
+                        id: 42,
                         title: "組長",
                     },
                     {
-                        name: "潘玟瑜",
+                        id: 18,
                         title: "組員",
                     },
                     {
-                        name: "劉吉榮",
+                        id: 34,
                         title: "組員",
                     },
                     {
-                        name: "蔡尚騰",
+                        id: 8,
                         title: "機動",
                     }
                 ]
@@ -1384,15 +1375,15 @@ const information_json = {
                 department: "紀錄組",
                 members: [
                     {
-                        name: "莊恩齊",
+                        id: 21,
                         title: "組長",
                     },
                     {
-                        name: "許睿智",
+                        id: 3,
                         title: "組員",
                     },
                     {
-                        name: "林琮澔",
+                        id: 26,
                         title: "組員",
                     }
                 ]
@@ -1402,19 +1393,19 @@ const information_json = {
                 department: "網頁組",
                 members: [
                     {
-                        name: "邱傑義",
+                        id: 32,
                         title: "組長",
                     },
                     {
-                        name: "李士朋",
+                        id: 37,
                         title: "組員",
                     },
                     {
-                        name: "林珈誼",
+                        id: 59,
                         title: "組員",
                     },
                     {
-                        name: "劉吉榮",
+                        id: 34,
                         title: "組員",
                     }
                 ]

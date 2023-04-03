@@ -1,6 +1,7 @@
 <script lang="ts">
     import FacePic from "../Components/FacePic.svelte";
     import {information} from '../lib/info';
+    import {fade, fly} from "svelte/transition";
 
     export let params: object = {};
 
@@ -116,7 +117,7 @@
     <h3 class="text-center text-s font-extralight my-1 mx-2">{artwork_info.media}</h3>
 </div>
 
-<div class="mx-3 flex flex-col justify-center items-center text-center my-3">
+<div out:fade={{duration: 400}} class="mx-3 flex flex-col justify-center items-center text-center my-3">
     <div class="flex flex-rol flex-wrap rounded-full m-auto items-center justify-center gap-3 px-2 py-1">
         {#each pages as page}
             <div id="{page.name}-btn"
@@ -148,8 +149,8 @@
             <div class="justify-center flex flex-wrap gap-5">
                 {#each team_members as member}
                     <div class="mx-1 md:mx-2 w-48 md:w-64 font-light text-center flex flex-col justify-center items-center">
-                        <FacePic id={all_info.school_ids[member.name]} lang="{params.language}"></FacePic>
-                        <div class="desc text-xl mt-1">{member.name}</div>
+                        <FacePic id={member.id} lang="{params.language}"></FacePic>
+                        <div class="desc text-xl mt-1">{all_info.member_names[member.id]}</div>
                         <div class="overlay">
                             <div class="text-sm">{member.title}</div>
                         </div>
@@ -158,7 +159,10 @@
             </div>
         </div>
 
-        <div id="description-page" class="p-0 flex flex-wrap flex-row items-center justify-center gap-5">
+        <div out:fly={{y: 30}} id="description-page" class="p-0 flex flex-wrap flex-row items-center justify-center">
+            <div class="w-[98.5%] bg-white-10">
+                <div class="bg-violet-500/90 h-1" style="width: {parseInt((image_num + 1) * 100 / img_range[0]).toString()}%"></div>
+            </div>
             <div id="description-img"
                    class="w-full h-[80vh] bg-no-repeat bg-cover bg-center rounded-tl-xl rounded-tr-xl rounded-br-xl"
                    style="background-image: url('/images/exhibition/artwork_photos/{artwork_info.id}/{image_num}.jpg');">
@@ -169,12 +173,12 @@
                         <br><br>
                         {@html description}
                     </p>
-                    <div class="text-s text-black/20 hover:text-black transition-colors duration-300 flex flex-row gap-5 w-fit
-                        bg-white/90 rounded-bl-xl rounded-br-xl p-3
+                    <div class="text-lg text-black/20 flex flex-row w-fit
+                        bg-white/90 rounded-bl-xl rounded-br-xl p-1
                         cursor-pointer shadow-inner shadow-black ">
-                        <a class="fa-solid fa-chevron-left" on:click={last_img}></a>
-                        <a class="fa-regular fa-book" on:click={toggle_description}></a>
-                        <a class="fa-solid fa-chevron-right" on:click={next_img}></a>
+                        <a class="fa-solid fa-chevron-left hover:text-black transition-colors duration-200 p-2 px-3" on:click={last_img}></a>
+                        <a class="fa-regular fa-book hover:text-black transition-colors duration-200 p-2 px-3" on:click={toggle_description}></a>
+                        <a class="fa-solid fa-chevron-right hover:text-black transition-colors duration-200 p-2 px-3" on:click={next_img}></a>
                     </div>
                 </div>
             </div>
