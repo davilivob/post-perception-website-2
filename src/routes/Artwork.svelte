@@ -2,21 +2,22 @@
     import FacePic from "../Components/FacePic.svelte";
     import {information} from '../lib/info';
 
-    export let params = {};
+    export let params: object = {};
 
-    const is_en: boolean = params.language == 'en';
-    const all_info: object = $information[params.language];
-    const artwork_info: object = all_info.art_teams[params.id];
+    let is_en: boolean = params.language == 'en';
+    let all_info: object = $information[params.language];
+    let artwork_info: object = all_info.art_teams[params.id];
 
-    const team_members: object = artwork_info.members
-    const description: String = artwork_info.description;
-    const format: String = artwork_info.format;
-    const media: String = artwork_info.media;
-    const face_pic_width_vw = parseInt(String(100.0 / (team_members.length)));
-    console.log(face_pic_width_vw)
-    console.log(artwork_info);
 
-    let current_page = 'creators'
+    let team_members: object = artwork_info.members
+    let description: String = artwork_info.description;
+    let format: String = artwork_info.format;
+    let media: String = artwork_info.media;
+    let images: Array<Number> = artwork_info.images;
+    let face_pic_width_vw = parseInt(String(100.0 / (team_members.length)));
+
+    let current_page = 'description'
+    $:image_num = 0;
 
     // This line in necessary to make TailwindCSS know what tags need to be used
     const tailwinds_tags = ['to-violet-900', 'to-violet-900/10', 'to-rose-900', 'to-rose-900/10', 'to-cyan-900', 'to-cyan-900/10', 'to-lime-900', 'to-lime-900/10'];
@@ -26,7 +27,7 @@
             name: 'creators', color: 'rose', content: is_en ? 'Creators' : '創作者'
         },
         {
-            name: 'description', color: 'cyan', content: is_en ? 'Description' : '作品論述'
+            name: 'description', color: 'cyan', content: is_en ? 'Description' : '作品介紹'
         },
         {
             name: 'image_record', color: 'violet', content: is_en ? 'Image Record' : '照片記錄'
@@ -35,6 +36,21 @@
             name: 'video_record', color: 'lime', content: is_en ? 'Video Record' : '影像記錄'
         },
     ];
+
+    function next_img() {
+        image_num ++;
+    }
+    function last_img() {
+        image_num --;
+    }
+
+    function next_work() {
+        window.location.href = `/#/${params.language}/artworks/${artwork_info.id + 1}`;
+    }
+
+    function last_work() {
+        window.location.href = `/#/${params.language}/artworks/${artwork_info.id - 1}`;
+    }
 
     function hide_page(page_name: String) {
         console.log(`${page_name} page is hidden`)
@@ -46,32 +62,49 @@
         document.getElementById(`${page_name}-page`).classList.remove('hidden')
     }
 
-    const stop_red_btn = () => clearInterval(set_red_btn)
+    const stop_red_btn = () => clearInterval(set_initial_btn)
 
-    let set_red_btn = setInterval(() => {
-        if (document.getElementById('creators-btn').classList.contains(`to-rose-900/10`)) {
-            document.getElementById('creators-btn').classList.add(`to-rose-900`);
-            document.getElementById('creators-btn').classList.remove(`to-rose-900/10`);
+    let set_initial_btn = setInterval(() => {
+        if (document.getElementById('description-btn').classList.contains(`to-cyan-900/10`)) {
+            document.getElementById('description-btn').classList.add(`to-cyan-900`);
+            document.getElementById('description-btn').classList.remove(`to-cyan-900/10`);
             stop_red_btn()
         } else return
     }, 100)
-
-
 </script>
 
-<a class="fa-solid fa-arrow-left text-2xl p-3 top-0" href="/#/{params.language}/artworks"></a>
 
-<div class="mx-3 break-all">
-    <h1 class="text-center text-5xl font-black my-1 text-white">{artwork_info.title}</h1>
+<!--<div class="mt-8 mx-3 fixed">-->
+<!--    <a class="text-lg" href="/#/{params.language}/artworks">-->
+<!--        <a class="fa-solid fa-chevron-left"></a>-->
+<!--        <a class="transition-all duration-300 text-white/0 hover:text-white" id="go-back-text">{is_en ? "Back to Artworks List": "回到作品列表"}</a>-->
+<!--    </a>-->
+<!--</div>-->
+
+<div class="mx-3 mt-12 text-center">
+    {#if artwork_info.id >= 1}
+        <a class="text-lg mx-3 text-white/10 cursor-pointer hover:text-white transition-all duration-500 ease-in-out" href="/#/redirect/@{params.language}@artworks@{artwork_info.id - 1}">
+            <a class="fa-solid fa-arrow-left"></a>
+            {all_info.art_teams[artwork_info.id - 1].title}
+        </a>
+    {/if}
+    <h1 class="text-center text-5xl font-black m-1 text-white {(artwork_info.id == 4) ? 'break-all' : ''}">{artwork_info.title}</h1>
+    {#if artwork_info.id < 12}
+        <a class="text-lg mx-3 text-white/10 cursor-pointer hover:text-white transition-all duration-500 ease-in-out" href="/#/redirect/@{params.language}@artworks@{artwork_info.id + 1}">
+            {all_info.art_teams[artwork_info.id + 1].title}
+            <a class="fa-solid fa-arrow-right"></a>
+        </a>
+    {/if}
+
     <h2 class="text-center text-xl font-bold my-1">{artwork_info.format}</h2>
-    <h3 class="text-center text-xs font-extralight my-1">{artwork_info.media}</h3>
+    <h3 class="text-center text-s font-extralight my-1 mx-2">{artwork_info.media}</h3>
 </div>
 
 <div class="mx-3 flex flex-col justify-center items-center text-center mt-3">
-    <div class="flex flex-rol rounded-full m-auto items-center justify-center gap-3 px-2 py-1">
+    <div class="flex flex-rol flex-wrap rounded-full m-auto items-center justify-center gap-3 px-2 py-1">
         {#each pages as page}
             <div id="{page.name}-btn"
-                 class="rounded-full bg-gradient-to-tl from-white/10 to-{page.color}-900/10 px-3 py-1 text-xs cursor-pointer duration-300 ease-in-out"
+                 class="rounded-full bg-gradient-to-tl from-white/10 to-{page.color}-900/10 px-3 py-1 text-xs cursor-pointer"
                  on:click={e => {
                     if (current_page === page.name) return
                     current_page = page.name
@@ -94,7 +127,8 @@
     </div>
 
     <div class="w-11/12 bg-gradient-to-tr from-white/10 to-violet-600/10 rounded-xl m-5 text-gray-300 font-bolder">
-        <div class="block p-10" id="creators-page">
+
+        <div class="hidden p-10" id="creators-page">
             <div class="justify-center flex flex-wrap gap-5">
                 {#each team_members as member}
                     <div class="mx-1 md:mx-2 w-48 md:w-64 font-light text-center flex flex-col justify-center items-center">
@@ -107,18 +141,23 @@
                 {/each}
             </div>
         </div>
-        <div id="description-page" class="hidden p-5">
-            <!--            <h3 class="text-3xl font-normal mb-10">{is_en ? 'Description' : '作品論述'}</h3>-->
-            <p class="sm:text-lg text-s text-left">{@html description.replace('<br>', '<br><br>')}</p>
+
+        <div id="description-page" class="p-5 flex flex-wrap flex-row items-center justify-center gap-5">
+            <a id="description-img"
+                   class="md:min-w-[50vw] md:h-[50vw] min-w-[80vw] h-[80vw] bg-no-repeat bg-cover bg-center rounded"
+                   style="background-image: url('/images/exhibition/artwork_photos/{artwork_info.id}/{image_num}.jpg')">
+                <button class="fa-duotone fa-chevron-left float-left top-1/2 mx-3 text-4xl" on:click={next_img}></button>
+                <button class="fa-duotone fa-chevron-right float-right top-1/2 mx-3 text-4xl" on:click={last_img}></button>
+            </a>
+            <p class="sm:text-lg text-s text-left break-after-avoid md:w-2/5">{@html description}</p>
         </div>
+
         <div id="image_record-page" class="hidden">
-            <h3 class="text-3xl font-normal mb-10">{is_en ? 'Description' : '作品論述'}</h3>
-            <div class="text-sm">{description}</div>
         </div>
+
         <div id="video_record-page" class="hidden">
-            <h3 class="text-3xl font-normal mb-10">{is_en ? 'Description' : '作品論述'}</h3>
-            <div class="text-sm">{description}</div>
         </div>
+
     </div>
 </div>
 
