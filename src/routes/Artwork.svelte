@@ -25,16 +25,16 @@
 
     const pages: Object = [
         {
-            name: 'creators', color: 'rose', content: is_en ? 'Creators' : '創作者'
+            name: 'creators', color: 'rose', content: is_en ? 'Creators' : '創作者', icon: 'fa-users'
         },
         {
-            name: 'description', color: 'cyan', content: is_en ? 'Description' : '作品介紹'
+            name: 'description', color: 'cyan', content: is_en ? 'Description' : '作品介紹', icon: 'fa-books'
         },
         {
-            name: 'image_record', color: 'violet', content: is_en ? 'Image Record' : '照片記錄'
+            name: 'image_record', color: 'violet', content: is_en ? 'Image Record' : '照片記錄', icon: 'fa-images'
         },
         {
-            name: 'video_record', color: 'lime', content: is_en ? 'Video Record' : '影像記錄'
+            name: 'video_record', color: 'lime', content: is_en ? 'Video Record' : '影像記錄', icon: 'fa-video'
         },
     ];
 
@@ -67,6 +67,11 @@
         content.classList.toggle('pointer-events-none')
         content.classList.toggle('shadow-black')
         content.classList.toggle('shadow-2xl')
+    }
+
+    function toggle_team_members() {
+        const team_members = document.getElementById('team-members-container');
+        team_members.classList.toggle('hidden');
     }
 
     function hide_page(page_name: String) {
@@ -138,6 +143,7 @@
                         }
                     }
                 }}>
+                <a class="fa-regular {page.icon}"></a>
                 {page.content}
             </div>
         {/each}
@@ -160,12 +166,15 @@
         </div>
 
         <div out:fly={{y: 30}} id="description-page" class="p-0 flex flex-wrap flex-row items-center justify-center">
+
+<!--            Image Progress Bar-->
             <div class="w-[98.5%] bg-white-10">
-                <div class="bg-violet-500/90 h-1" style="width: {parseInt((image_num + 1) * 100 / img_range[0]).toString()}%"></div>
+                <div class="bg-gradient-to-br from-violet-600 to-pink-800 h-1" style="width: {parseInt((image_num) * 100 / (img_range[0] - 1)).toString()}%"></div>
             </div>
-            <div id="description-img"
-                   class="w-full h-[80vh] bg-no-repeat bg-cover bg-center rounded-tl-xl rounded-tr-xl rounded-br-xl"
+
+            <div class="w-full h-[80vh] bg-no-repeat bg-cover bg-center rounded-tl-xl rounded-tr-xl rounded-br-xl"
                    style="background-image: url('/images/exhibition/artwork_photos/{artwork_info.id}/{image_num}.jpg');">
+
                 <div class="top-0 sm:text-lg text-s text-left break-after-avoid md:w-1/3 h-full text-transparent transition-all duration-500 ease-in-out rounded-tl-xl rounded-tr-xl rounded-br-xl md:rounded-br-none md:rounded-tr-none"
                     id="description-text-container">
                     <p class="px-5 py-3 max-h-full h-full overflow-auto pointer-events-none sticky">
@@ -178,6 +187,7 @@
                         cursor-pointer shadow-inner shadow-black ">
                         <a class="fa-solid fa-chevron-left hover:text-black transition-colors duration-200 p-2 px-3" on:click={last_img}></a>
                         <a class="fa-regular fa-book hover:text-black transition-colors duration-200 p-2 px-3" on:click={toggle_description}></a>
+<!--                        <a class="fa-regular fa-users hover:text-black transition-colors duration-200 p-2 px-3" on:click={toggle_team_members}></a>-->
                         <a class="fa-solid fa-chevron-right hover:text-black transition-colors duration-200 p-2 px-3" on:click={next_img}></a>
                     </div>
                 </div>

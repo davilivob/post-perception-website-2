@@ -28,37 +28,41 @@
 
     const pages: Object = [
         {
-            id: 0, name: 'president', color: 'emerald', content: is_en ? 'President' : '總召'
+            id: 0, name: 'president', color: 'emerald', content: is_en ? 'President' : '總召', icon: 'fa-user-secret'
         },
         {
-            id: 1, name: 'paper', color: 'red', content: is_en ? 'Paper' : '文書'
+            id: 1, name: 'paper', color: 'red', content: is_en ? 'Paper' : '文書', icon: 'fa-pen-nib'
         },
         {
-            id: 2, name: 'moneyman', color: 'violet', content: is_en ? 'Moneyman' : '總務'
+            id: 2, name: 'moneyman', color: 'violet', content: is_en ? 'Moneyman' : '總務', icon: 'fa-sack-dollar'
         },
         {
-            id: 3, name: 'translate', color: 'sky', content: is_en ? 'Translate' : '翻譯組'
+            id: 3, name: 'translate', color: 'sky', content: is_en ? 'Translate' : '翻譯組', icon: 'fa-language'
         },
         {
-            id: 4, name: 'visual', color: 'yellow', content: is_en ? 'Visual' : '視覺組'
+            id: 4, name: 'visual', color: 'yellow', content: is_en ? 'Visual' : '視覺組', icon: 'fa-brush'
         },
         {
-            id: 5, name: 'public', color: 'rose', content: is_en ? 'Business' : '公關組'
+            id: 5, name: 'public', color: 'rose', content: is_en ? 'Business' : '公關組', icon: 'fa-handshake'
         },
         {
-            id: 6, name: 'joy', color: 'pink', content: is_en ? 'Get High' : '活動組'
+            id: 6, name: 'joy', color: 'pink', content: is_en ? 'Get High' : '活動組', icon: 'fa-smile-wink'
         },
         {
-            id: 7, name: 'exhibition', color: 'orange', content: is_en ? 'Exhibition' : '佈展組'
+            id: 7,
+            name: 'exhibition',
+            color: 'orange',
+            content: is_en ? 'Exhibition' : '佈展組',
+            icon: 'fa-people-carry'
         },
         {
-            id: 8, name: 'things', color: 'teal', content: is_en ? 'Video Record' : '事務組'
+            id: 8, name: 'things', color: 'teal', content: is_en ? 'Video Record' : '事務組', icon: 'fa-folder-open'
         },
         {
-            id: 9, name: 'record', color: 'amber', content: is_en ? 'Record' : '紀錄組'
+            id: 9, name: 'record', color: 'amber', content: is_en ? 'Record' : '紀錄組', icon: 'fa-camera'
         },
         {
-            id: 10, name: 'website', color: 'lime', content: is_en ? 'Website' : '網頁組'
+            id: 10, name: 'website', color: 'lime', content: is_en ? 'Website' : '網頁組', icon: 'fa-square-terminal'
         },
     ];
 
@@ -90,7 +94,7 @@
     <div class="flex flex-rol flex-wrap rounded-full m-auto items-center justify-center gap-3 px-2 py-1">
         {#each pages as page}
             <div id="{page.name}-btn"
-                 class="rounded-full bg-gradient-to-tl from-white/10 to-{page.color}-900/10 px-3 py-1 text-xs cursor-pointer duration-300 ease-in-out"
+                 class="rounded-full bg-gradient-to-tl from-white/10 to-{page.color}-900/10 px-3 py-1 text-s cursor-pointer duration-300 ease-in-out"
                  on:click={e => {
                     if (current_page === page.name) return
                     current_page = page.name
@@ -107,6 +111,7 @@
                         }
                     }
                 }}>
+                <a class="fa-regular {page.icon}"></a>
                 {page.content}
             </div>
         {/each}
