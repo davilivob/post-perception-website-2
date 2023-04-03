@@ -52,13 +52,13 @@
                 {/if}
             </a>
             {#each admins_info as admin}
-                <h2 class="font text-2xl">
+                <a class="font text-2xl" href="/#/{params.language}/members/{admin.id}">
                     {#if is_en}
                         {admin.member_title} of {admin.department}
                     {:else}
                         {admin.department}の{admin.member_title}
                     {/if}
-                </h2>
+                </a>
             {/each}
         </div>
     </div>

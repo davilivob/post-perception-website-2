@@ -8,7 +8,7 @@
     $: img_link = `images/exhibition/head_photos/${file_format}/${id}.${file_format}`
 
     const go_to_person = () => {
-        window.location.href = `/#/${lang}/members/${id}`;
+        window.location.href = `/#/${lang}/member/${id}`;
     }
 </script>
 

@@ -2,6 +2,7 @@
     import {information} from '../lib/info';
     import FacePic from "../Components/FacePic.svelte";
 
+
     export let params = {
         language: undefined
     };
@@ -17,6 +18,10 @@
             id: key,
         })
     }
+
+
+    let page_id = params.id || '0'
+    console.log(page_id)
 
 
     let current_page = 'creators'
@@ -76,13 +81,13 @@
         document.getElementById(`${page_name}-page`).classList.remove('hidden')
     }
 
-    const stop_red_btn = () => clearInterval(set_red_btn)
+    const stop_init_btn = () => clearInterval(set_init_btn)
 
-    let set_red_btn = setInterval(() => {
-        if (document.getElementById('president-btn').classList.contains(`to-emerald-900/10`)) {
-            document.getElementById('president-btn').classList.add(`to-emerald-900`);
-            document.getElementById('president-btn').classList.remove(`to-emerald-900/10`);
-            stop_red_btn()
+    let set_init_btn = setInterval(() => {
+        if (document.getElementById(`${pages[page_id].name}-btn`).classList.contains(`to-${pages[page_id].color}-900/10`)) {
+            document.getElementById(`${pages[page_id].name}-btn`).classList.add(`to-${pages[page_id].color}-900`);
+            document.getElementById(`${pages[page_id].name}-btn`).classList.remove(`to-${pages[page_id].color}-900/10`);
+            stop_init_btn()
         } else return
     }, 100)
 </script>
@@ -96,6 +101,7 @@
             <div id="{page.name}-btn"
                  class="rounded-full bg-gradient-to-tl from-white/10 to-{page.color}-900/10 px-3 py-1 text-s cursor-pointer duration-300 ease-in-out"
                  on:click={e => {
+                    window.location.href = `/#/${params.language}/members/${page.id}`
                     if (current_page === page.name) return
                     current_page = page.name
                     console.log(`switching to ${page.name}`)
@@ -118,7 +124,7 @@
     </div>
     <div class="w-11/12 bg-gradient-to-tr from-white/10 to-violet-600/10 rounded-xl m-5 text-gray-300 font-bolder">
         {#each members_info as admin_team}
-            <div class="{(['president', '總召'].includes(admin_team.department)) ? '' : 'hidden'} p-10 flex flex-col items-center text-center"
+            <div class="{(page_id == admin_team.id) ? '' : 'hidden'} p-10 flex flex-col items-center text-center"
                  id="{pages[admin_team.id].name}-page">
                 <!--                <h2 class="text-3xl font-bold my-1 text-white">{admin_team.department.charAt(0).toUpperCase() + admin_team.department.slice(1)}</h2>-->
                 <h2 class="text-3xl font-bold my-1 text-white">{pages[admin_team.id].content}</h2>
