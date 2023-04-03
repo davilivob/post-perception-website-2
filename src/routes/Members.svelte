@@ -31,7 +31,7 @@
 
     const pages: Object = [
         {
-            id: 0, name: 'boss', color: 'emerald', content: is_en ? 'Boss' : '總召'
+            id: 0, name: 'president', color: 'emerald', content: is_en ? 'President' : '總召'
         },
         {
             id: 1, name: 'paper', color: 'red', content: is_en ? 'Paper' : '文書'
@@ -49,16 +49,16 @@
             id: 5, name: 'public', color: 'rose', content: is_en ? 'Business' : '公關組'
         },
         {
-            id: 6, name: 'joy', color: 'pink', content: is_en ? 'Video Record' : '活動組'
+            id: 6, name: 'joy', color: 'pink', content: is_en ? 'Get High' : '活動組'
         },
         {
-            id: 7, name: 'exhibition', color: 'orange', content: is_en ? 'Video Record' : '佈展組'
+            id: 7, name: 'exhibition', color: 'orange', content: is_en ? 'Exhibition' : '佈展組'
         },
         {
             id: 8, name: 'things', color: 'teal', content: is_en ? 'Video Record' : '事務組'
         },
         {
-            id: 9, name: 'record', color: 'amber', content: is_en ? 'Video Record' : '紀錄組'
+            id: 9, name: 'record', color: 'amber', content: is_en ? 'Record' : '紀錄組'
         },
         {
             id: 10, name: 'website', color: 'lime', content: is_en ? 'Website' : '網頁組'
@@ -78,9 +78,9 @@
     const stop_red_btn = () => clearInterval(set_red_btn)
 
     let set_red_btn = setInterval(() => {
-        if (document.getElementById('boss-btn').classList.contains(`to-emerald-900/10`)) {
-            document.getElementById('boss-btn').classList.add(`to-emerald-900`);
-            document.getElementById('boss-btn').classList.remove(`to-emerald-900/10`);
+        if (document.getElementById('president-btn').classList.contains(`to-emerald-900/10`)) {
+            document.getElementById('president-btn').classList.add(`to-emerald-900`);
+            document.getElementById('president-btn').classList.remove(`to-emerald-900/10`);
             stop_red_btn()
         } else return
     }, 100)
@@ -116,9 +116,10 @@
     </div>
     <div class="w-11/12 bg-gradient-to-tr from-white/10 to-violet-600/10 rounded-xl m-5 text-gray-300 font-bolder">
         {#each members_info as admin_team}
-            <div class="{(['main', '總召'].includes(admin_team.department)) ? '' : 'hidden'} p-10 flex flex-col items-center text-center"
+            <div class="{(['president', '總召'].includes(admin_team.department)) ? '' : 'hidden'} p-10 flex flex-col items-center text-center"
                  id="{pages[admin_team.id].name}-page">
-                <h2 class="text-3xl font-bold my-1 text-white">{admin_team.department}</h2>
+                <!--                <h2 class="text-3xl font-bold my-1 text-white">{admin_team.department.charAt(0).toUpperCase() + admin_team.department.slice(1)}</h2>-->
+                <h2 class="text-3xl font-bold my-1 text-white">{pages[admin_team.id].content}</h2>
                 <div class="flex flex-row flex-wrap justify-center gap-4 border-b-1 border-white/20 p-10">
                     {#each admin_team.members as member}
                         <div class="">
