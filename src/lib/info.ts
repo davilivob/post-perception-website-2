@@ -80,7 +80,7 @@ const information_json = {
                 media: "膠合玻璃, 電子材料, 彩色有聲, 18'00\", 彩⾊/有聲, 2023",
                 size: "200cm x 200cm x 200cm",
                 record: {
-                    images: [0, 1],
+                    images: [2, 0],
                     videos: {
                         youtube: "91JGyan6MY8"
                     },
@@ -125,8 +125,8 @@ const information_json = {
                 `,
                 media: "影像互動裝置",
                 size: "", record: {
-                    images: [0, 1],
-                    videos: [0, 1]
+                    images: [[1], []],
+                    videos: {}
                 }
             },
             {
@@ -214,7 +214,7 @@ const information_json = {
                 `,
                 media: "",
                 size: "", record: {
-                    images: [0, 1],
+                    images: [5, 0],
                     videos: [0, 1]
                 }
             },
@@ -244,8 +244,9 @@ const information_json = {
                     -->同時經由一系列與魁儡的對話回應人類與數位科技相處的現狀。
                 `,
                 media: "彩色/有聲 2023（影片長度後期補上）",
-                size: "", record: {
-                    images: [0, 1],
+                size: "",
+                record: {
+                    images: [4, 1],
                     videos: [0, 1]
                 }
             },
@@ -1187,15 +1188,15 @@ const information_json = {
         admins: [
             {
                 id: 0,
-                department: "總召",
+                department: "president",
                 members: [
                     {
                         name: "徐浩瀚",
-                        title: "總召",
+                        title: "President",
                     },
                     {
                         name: "王嘉郁",
-                        title: "副總召",
+                        title: "Vice President",
                     }
                 ]
             },

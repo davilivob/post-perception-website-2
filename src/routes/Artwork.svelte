@@ -13,7 +13,7 @@
     let description: String = artwork_info.description;
     let format: String = artwork_info.format;
     let media: String = artwork_info.media;
-    let images: Array<Number> = artwork_info.images;
+    let img_range: Array<Number> = artwork_info.record.images;
     let face_pic_width_vw = parseInt(String(100.0 / (team_members.length)));
 
     let current_page = 'description'
@@ -38,10 +38,12 @@
     ];
 
     function next_img() {
-        image_num ++;
+        if (image_num >= img_range[0] - 1) image_num = 0;
+        else image_num ++;
     }
     function last_img() {
-        image_num --;
+        if (image_num <= 0) image_num = img_range[0] - 1;
+        else image_num --;
     }
 
     function next_work() {
@@ -50,6 +52,18 @@
 
     function last_work() {
         window.location.href = `/#/${params.language}/artworks/${artwork_info.id - 1}`;
+    }
+
+    function toggle_description(e) {
+        e.target.classList.toggle('fa-book-open');
+        e.target.classList.toggle('fa-book');
+        const description = document.getElementById('description-text-container');
+        const content = document.querySelector('#description-text-container p');
+        description.classList.toggle('text-transparent');
+        description.classList.toggle('text-cyan-50/80');
+        description.classList.toggle('bg-black/30');
+        description.classList.toggle('backdrop-blur-xl');
+        content.classList.toggle('overflow-auto')
     }
 
     function hide_page(page_name: String) {
@@ -100,7 +114,7 @@
     <h3 class="text-center text-s font-extralight my-1 mx-2">{artwork_info.media}</h3>
 </div>
 
-<div class="mx-3 flex flex-col justify-center items-center text-center mt-3">
+<div class="mx-3 flex flex-col justify-center items-center text-center my-3">
     <div class="flex flex-rol flex-wrap rounded-full m-auto items-center justify-center gap-3 px-2 py-1">
         {#each pages as page}
             <div id="{page.name}-btn"
@@ -134,7 +148,7 @@
                     <div class="mx-1 md:mx-2 w-48 md:w-64 font-light text-center flex flex-col justify-center items-center">
                         <FacePic id={all_info.school_ids[member.name]} lang="{params.language}"></FacePic>
                         <div class="desc text-xl mt-1">{member.name}</div>
-                        <div class="overlay" onmouseover="">
+                        <div class="overlay">
                             <div class="text-sm">{member.title}</div>
                         </div>
                     </div>
@@ -142,14 +156,24 @@
             </div>
         </div>
 
-        <div id="description-page" class="p-5 flex flex-wrap flex-row items-center justify-center gap-5">
-            <a id="description-img"
-                   class="md:min-w-[50vw] md:h-[50vw] min-w-[80vw] h-[80vw] bg-no-repeat bg-cover bg-center rounded"
+        <div id="description-page" class="p-0 flex flex-wrap flex-row items-center justify-center gap-5">
+            <div id="description-img"
+                   class="w-full h-[80vh] bg-no-repeat bg-cover bg-center rounded-tl-xl rounded-tr-xl rounded-br-xl"
                    style="background-image: url('/images/exhibition/artwork_photos/{artwork_info.id}/{image_num}.jpg')">
-                <button class="fa-duotone fa-chevron-left float-left top-1/2 mx-3 text-4xl" on:click={next_img}></button>
-                <button class="fa-duotone fa-chevron-right float-right top-1/2 mx-3 text-4xl" on:click={last_img}></button>
-            </a>
-            <p class="sm:text-lg text-s text-left break-after-avoid md:w-2/5">{@html description}</p>
+                <div class="top-0 sm:text-lg text-s text-left break-after-avoid md:w-1/3 h-full text-transparent transition-all duration-500 ease-in-out rounded-tl-xl"
+                    id="description-text-container">
+                    <p class="px-5 py-3 max-h-full h-full">
+                        {is_en ? "Description": "作品論述"}：
+                        <br><br>
+                        {@html description}
+                    </p>
+                    <div class="text-s text-black flex flex-row gap-5 w-fit bg-white/90 rounded-bl-xl rounded-br-xl px-2 py-1 cursor-pointer">
+                        <a class="fa-solid fa-chevron-left" on:click={last_img}></a>
+                        <a class="fa-regular fa-book" on:click={toggle_description}></a>
+                        <a class="fa-solid fa-chevron-right" on:click={next_img}></a>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div id="image_record-page" class="hidden">
