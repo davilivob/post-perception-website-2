@@ -2,8 +2,8 @@
     export let id = 0;
     export let lang = 'zh';
     export let rounded = 'full';
-    export let w = 'w-[30vh]';
-    export let h = 'h-[30vh]';
+    export let w = 'max-w-[30vh]';
+    export let h = 'max-h-[30vh]';
     $: img_link = `images/exhibition/head_photos/png/${id}.png`
 
     const go_to_person = () => {
