@@ -47,6 +47,7 @@
 
 <TailwindCSS/>
 <div class="bg-gradient-to-br from-blue-900/90 to-black w-screen h-screen fixed z-[-1]"></div>
+<div class="bg-gradient-to-br from-black/40 to-transparent w-screen h-screen fixed z-[-1]"></div>
 <main>
     <Cursor/>
     <Header language="{language}"/>
