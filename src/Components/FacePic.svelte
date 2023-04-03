@@ -4,7 +4,8 @@
     export let rounded = 'full';
     export let w = 'max-w-[30vh]';
     export let h = 'max-h-[30vh]';
-    $: img_link = `images/exhibition/head_photos/png/${id}.png`
+    const file_format = 'jpg'
+    $: img_link = `images/exhibition/head_photos/${file_format}/${id}.${file_format}`
 
     const go_to_person = () => {
         window.location.href = `/#/${lang}/members/${id}`;
