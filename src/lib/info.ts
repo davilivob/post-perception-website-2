@@ -46,7 +46,6 @@ const information_json = {
             "林珈誼": 59,
             "周詩涵": 60,
         },
-        exhibition: {},
         art_teams: [
             {
                 id: 0,
@@ -125,7 +124,7 @@ const information_json = {
                 `,
                 media: "影像互動裝置",
                 size: "", record: {
-                    images: [[1], []],
+                    images: [5, 0],
                     videos: {}
                 }
             },
@@ -161,7 +160,7 @@ const information_json = {
                 `,
                 media: "",
                 size: "", record: {
-                    images: [0, 1],
+                    images: [4, 0],
                     videos: [0, 1]
                 }
             },
@@ -314,7 +313,7 @@ const information_json = {
                 `,
                 media: "",
                 size: "", record: {
-                    images: [0, 1],
+                    images: [6, 0],
                     videos: [0, 1]
                 }
             },
@@ -342,7 +341,7 @@ const information_json = {
                 `,
                 media: "雙頻道錄像、燈泡、光敏電阻、聚光燈、壓克力、鋁擠型",
                 size: "", record: {
-                    images: [0, 1],
+                    images: [4, 0],
                     videos: [0, 1]
                 }
             },
@@ -376,7 +375,7 @@ const information_json = {
                 `,
                 media: "",
                 size: "", record: {
-                    images: [0, 1],
+                    images: [4, 0],
                     videos: [0, 1]
                 }
             },
@@ -453,7 +452,7 @@ const information_json = {
                 `,
                 media: "",
                 size: "", record: {
-                    images: [0, 1],
+                    images: [3, 0],
                     videos: [0, 1]
                 }
             },
@@ -798,7 +797,7 @@ const information_json = {
                 media: "膠合玻璃, 電子材料, 彩色有聲, 18'00\", 彩⾊/有聲, 2023",
                 size: "200cm x 200cm x 200cm",
                 record: {
-                    images: [0, 1],
+                    images: [2, 0],
                     videos: {
                         youtube: "91JGyan6MY8"
                     },
@@ -847,7 +846,7 @@ const information_json = {
                 `,
                 media: "影像互動裝置",
                 size: "", record: {
-                    images: [0, 1],
+                    images: [5, 0],
                     videos: [0, 1]
                 }
             },
@@ -886,7 +885,7 @@ const information_json = {
                 `,
                 media: "",
                 size: "", record: {
-                    images: [0, 1],
+                    images: [4, 1],
                     videos: [0, 1]
                 }
             },
@@ -948,7 +947,7 @@ const information_json = {
                 `,
                 media: "",
                 size: "", record: {
-                    images: [0, 1],
+                    images: [5, 1],
                     videos: [0, 1]
                 }
             },
@@ -976,7 +975,7 @@ const information_json = {
                 `,
                 media: "Color/Sound",
                 size: "", record: {
-                    images: [0, 1],
+                    images: [4, 0],
                     videos: [0, 1]
                 }
             },
@@ -1044,7 +1043,7 @@ const information_json = {
                 `,
                 media: "",
                 size: "", record: {
-                    images: [0, 1],
+                    images: [6, 0],
                     videos: [0, 1]
                 }
             },
@@ -1063,7 +1062,7 @@ const information_json = {
                 title: "燈火闌珊處",
                 format: "Video Installation",
                 description: `
-                    In daily life, the applications of sensors are innumerable, with photoresistors being widely used for sensing light.
+                    In daily life, the applications of sensors are innumerable, with photo-resistors being widely used for sensing light.
                     When a light-sensitive sensor forms a circuit with a light fixture, the "no light allows electricity,
                     light emission resists electricity" interaction creates a subtle paradox of mutual opposition and even resistance.<br><br>
                     The artwork focuses on the interlocking and restraining relationships produced by "light, sensing, and circuitry,"
@@ -1074,9 +1073,9 @@ const information_json = {
                     As the light pours down, either gently or intensely, the pace of perception is always belatedly aware – realizing,
                     in the end, that it is already at the dimly lit place.
                 `,
-                media: "雙頻道錄像、燈泡、光敏電阻、聚光燈、壓克力、鋁擠型",
+                media: "Duo-channel video, light bulb, photo-resistor, spotlight, acrylic, aluminum extrusion",
                 size: "", record: {
-                    images: [0, 1],
+                    images: [4, 0],
                     videos: [0, 1]
                 }
             },
@@ -1097,7 +1096,7 @@ const information_json = {
                 `,
                 media: "",
                 size: "", record: {
-                    images: [0, 1],
+                    images: [4, 0],
                     videos: [0, 1]
                 }
             },
@@ -1159,7 +1158,7 @@ const information_json = {
                 `,
                 media: "",
                 size: "", record: {
-                    images: [0, 1],
+                    images: [3, 0],
                     videos: [0, 1]
                 }
             },
