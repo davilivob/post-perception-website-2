@@ -16,6 +16,7 @@
 <!--     style="background-image: url({img_link})">-->
 <!--</div>-->
 
-<img src="{img_link}" alt="" class="{w} {h} rounded-{rounded} cursor-pointer"
+<img src="{img_link}" alt="" class="{w} {h} rounded-{rounded} cursor-pointer bg-no-repeat bg-cover bg-center"
+     style="background-image: url('images/website/logo/logo600.gif')"
      on:click={go_to_person} id="image-container"
 >
