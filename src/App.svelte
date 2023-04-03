@@ -50,7 +50,7 @@
 <main>
     <Cursor/>
     <Header language="{language}"/>
-    <div class="pt-8">
+    <div class="py-8">
         <Router {routes}/>
     </div>
 </main>
