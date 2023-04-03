@@ -26,7 +26,7 @@
 <div class="pt-16 flex flex-col gap-5 items-center justify-center">
     <div class="mx-3 break-all">
         <h1 class="text-center text-5xl font-black my-1 text-white">
-            {is_en ? "Post-Perception" : "後知後覺後"}
+            {is_en ? "About This Exhibition" : "關於本展覽"}
         </h1>
     </div>
 

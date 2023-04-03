@@ -36,7 +36,7 @@
 </script>
 
 <div id="navbar"
-     class="fixed w-screen h-16 backdrop-blur-2xl z-30 flex flex-row items-center justify-between bg-gradient-to-br from-black/70 to-black/60 shadow-2xl">
+     class="fixed w-screen h-16 backdrop-blur-2xl z-30 flex flex-row items-center justify-between bg-gradient-to-br from-transparent to-black/30 shadow-2xl">
     <div class="flex justify-between items-center font-extrabold">
         <a href="#/{language}/" class="font-extrabold">
             <h1 class="text-white not-italic text-4xl left-5 tracking-tighter flex flex-row justify-center items-center"
@@ -47,17 +47,20 @@
         </a>
     </div>
 
-    <div class="hidden lg:block mr-3 font-bold text-xl ">
+    <div class="hidden lg:block mr-5 font-bold text-lg rounded-xl ">
         {#each links as link (link.id)}
-            <a class="cursor-pointer text-white/70 hover:text-white mx-4 transition-colors duration-500">
+            <a class="cursor-pointer hover:text-white text-amber-400 border-r-2 border-white/60 hover:text-2xl px-3 ">
                 <a href="#/{language}/{link.en}/">
                     {is_en ? link.en.toUpperCase() : link.zh}
                 </a>
             </a>
         {/each}
-        <a class="cursor-pointer text-white/70 hover:text-white mx-4 transition-colors duration-500">
+        <a class="cursor-pointer hover:text-white text-amber-400 hover:text-2xl">
             <a on:click={switch_language}>
-                {is_en ? '中' : 'En'}
+                {@html
+                    is_en ? '<a class="text-white/20">中</a>/<a class="text-white">En</a>'
+                        : '<a class="text-white">中</a>/<a class="text-white/20">En</a>'
+                }
             </a>
         </a>
     </div>
