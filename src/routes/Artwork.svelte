@@ -159,8 +159,8 @@
         <div id="description-page" class="p-0 flex flex-wrap flex-row items-center justify-center gap-5">
             <div id="description-img"
                    class="w-full h-[80vh] bg-no-repeat bg-cover bg-center rounded-tl-xl rounded-tr-xl rounded-br-xl"
-                   style="background-image: url('/images/exhibition/artwork_photos/{artwork_info.id}/{image_num}.jpg')">
-                <div class="top-0 sm:text-lg text-s text-left break-after-avoid md:w-1/3 h-full text-transparent transition-all duration-500 ease-in-out rounded-tl-xl"
+                   style="background-image: url('/images/exhibition/artwork_photos/{artwork_info.id}/{image_num}.jpg');">
+                <div class="top-0 sm:text-lg text-s text-left break-after-avoid md:w-1/3 h-full text-transparent transition-all duration-500 ease-in-out rounded-tl-xl rounded-tr-xl rounded-br-xl md:rounded-br-none md:rounded-tr-none"
                     id="description-text-container">
                     <p class="px-5 py-3 max-h-full h-full">
                         {is_en ? "Description": "作品論述"}：
@@ -184,4 +184,3 @@
 
     </div>
 </div>
-
