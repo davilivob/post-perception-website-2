@@ -63,7 +63,9 @@
         description.classList.toggle('text-cyan-50/80');
         description.classList.toggle('bg-black/30');
         description.classList.toggle('backdrop-blur-xl');
-        content.classList.toggle('overflow-auto')
+        content.classList.toggle('pointer-events-none')
+        content.classList.toggle('shadow-black')
+        content.classList.toggle('shadow-2xl')
     }
 
     function hide_page(page_name: String) {
@@ -162,12 +164,14 @@
                    style="background-image: url('/images/exhibition/artwork_photos/{artwork_info.id}/{image_num}.jpg');">
                 <div class="top-0 sm:text-lg text-s text-left break-after-avoid md:w-1/3 h-full text-transparent transition-all duration-500 ease-in-out rounded-tl-xl rounded-tr-xl rounded-br-xl md:rounded-br-none md:rounded-tr-none"
                     id="description-text-container">
-                    <p class="px-5 py-3 max-h-full h-full">
+                    <p class="px-5 py-3 max-h-full h-full overflow-auto pointer-events-none sticky">
                         {is_en ? "Description": "作品論述"}：
                         <br><br>
                         {@html description}
                     </p>
-                    <div class="text-s text-black flex flex-row gap-5 w-fit bg-white/90 rounded-bl-xl rounded-br-xl px-2 py-1 cursor-pointer">
+                    <div class="text-s text-black/20 hover:text-black transition-colors duration-300 flex flex-row gap-5 w-fit
+                        bg-white/90 rounded-bl-xl rounded-br-xl p-3
+                        cursor-pointer shadow-inner shadow-black ">
                         <a class="fa-solid fa-chevron-left" on:click={last_img}></a>
                         <a class="fa-regular fa-book" on:click={toggle_description}></a>
                         <a class="fa-solid fa-chevron-right" on:click={next_img}></a>
