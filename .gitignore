@@ -25,4 +25,4 @@ dist-ssr
 *.sw?
 
 # Big Files
-public/images/exhibition/head_photos/png/*
+#public/images/exhibition/head_photos/png/*
