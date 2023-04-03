@@ -46,7 +46,7 @@
             id: 4, name: 'visual', color: 'yellow', content: is_en ? 'Visual' : '視覺組'
         },
         {
-            id: 5, name: 'public', color: 'rose', content: is_en ? '' : '公關組'
+            id: 5, name: 'public', color: 'rose', content: is_en ? 'Business' : '公關組'
         },
         {
             id: 6, name: 'joy', color: 'pink', content: is_en ? 'Video Record' : '活動組'
@@ -86,8 +86,10 @@
     }, 100)
 </script>
 
-<div class="flex flex-col items-center my-5 m-5">
-    <h1 class="text-center text-5xl font-black my-3 text-white">參展人員</h1>
+<div class="flex flex-col items-center m-5 mt-12">
+    <h1 class="text-center text-5xl font-black my-3 text-white">
+        {is_en ? "MEMBERS" : "參展人員"}
+    </h1>
     <div class="flex flex-rol flex-wrap rounded-full m-auto items-center justify-center gap-3 px-2 py-1">
         {#each pages as page}
             <div id="{page.name}-btn"

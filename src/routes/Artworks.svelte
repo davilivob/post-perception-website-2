@@ -51,11 +51,14 @@
     }, 1000)
 
 </script>
-<div class="pt-20">
+<div class="pt-12">
+    <h1 class="text-center text-5xl font-extrabold text-white m-5">
+        {is_en ? "ARTWORKS" : "作品一覽"}
+    </h1>
     <div class="flex flex-wrap relative left-0 mx-20 items-center justify-center text-center ">
         {#each artworks_info as team}
             <div class="p-3">
-                <a class="font-extrabold blur-2xl text-white text-2xl  hover:blur-3xl p-5 ease-in-out transition-all duration-1000 cursor-pointer"
+                <a class="font-extrabold blur-2xl text-cyan-50/80 text-2xl  hover:blur-3xl p-5 ease-in-out transition-all duration-1000 cursor-pointer"
                    on:click={() => window.location.href = `#/${params.language}/artworks/${team.id}`}
                    on:mouseover={mouse_on_title}
                    id={team.id}>{team.title} </a>
@@ -67,11 +70,18 @@
             border border-slate-200 rounded-xl border-solid
             p-5 m-5 lg:m-40 lg:mt-20 h-auto text-lg
             transition-all duration-700 sm:block hidden">
-        <h2 class="mb-5 inline">『{hovered_title.innerHTML}』作品簡介：</h2>
+        <h2 class="mb-5 inline">
+            『{hovered_title.innerHTML}』
+            {is_en ? "Description" : "作品簡介"}：
+        </h2>
         {@html hovered_title_link}
-        <p id="preview-description" class="my-5">點擊上面的作品名稱，作品簡述會顯示在這裡喔！</p>
+        <p id="preview-description" class="my-5">
+            {is_en ? 'Hover' : "點擊上面的作品名稱，作品簡述會顯示在這裡喔！"}
+        </p>
         <div class="shadow-sm shadow-black border-none p-3 rounded bg-white/5 w-fit">
-            <h2 class="mb-5 py-2 inline">&nbsp;創作者：</h2>
+            <h2 class="mb-5 py-2 inline">&nbsp;
+                {is_en ? "Creator" : '創作者'}：
+            </h2>
             <p class="inline">
                 {#each artworks_info[hovered_title.id].members as member}
                     <a class="cursor-pointer hover:border-b-2"
