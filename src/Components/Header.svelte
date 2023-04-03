@@ -53,7 +53,8 @@
 
 
 <div id="links-container"
-     class="fixed text-center items-center justify-center flex flex-col hidden w-screen h-screen gap-10 z-10 bg-violet-500/10 transition-all ease-in-out duration-700 text-white">
+     class="fixed text-center items-center justify-center flex flex-col
+         hidden w-screen h-screen gap-10 z-10 bg-violet-500/10 transition-all ease-in-out duration-700 text-white">
     <i id="close-icon" class="fa-solid fa-xmark text-3xl cursor-pointer " on:click={open_menu}></i>
     {#each links as link (link.id)}
         <a class="">
