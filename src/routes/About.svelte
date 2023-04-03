@@ -1,5 +1,6 @@
 <script>
     import {information} from "../lib/info";
+    import Sponsor from "../Components/Sponsor.svelte";
 
     export let params = {};
     const is_en = params.language == 'en';
@@ -12,4 +13,5 @@
     </div>
 
     <img src="public/images/exhibition/poster.jpeg" alt="" class="max-h-[60vh]">
+    <Sponsor language="{params.language}"/>
 </div>
