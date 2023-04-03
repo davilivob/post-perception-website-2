@@ -14,7 +14,7 @@
 
     const links = [
         {id: 0, en: 'home', zh: '首頁'},
-        {id: 1, en: 'about', zh: '關於我們'},
+        {id: 1, en: 'about', zh: '關於'},
         {id: 2, en: 'members', zh: '參展人員'},
         {id: 3, en: 'artworks', zh: '參展作品'},
         {id: 4, en: 'records', zh: '展場紀錄'},
@@ -36,17 +36,33 @@
 </script>
 
 <div id="navbar"
-     class="fixed w-screen h-16 backdrop-blur-2xl z-30 flex flex-row items-center bg-gradient-to-t from-transparent to-cyan-900/30 shadow-2xl">
+     class="fixed w-screen h-16 backdrop-blur-2xl z-30 flex flex-row items-center justify-between bg-gradient-to-br from-black/70 to-black/60 shadow-2xl">
     <div class="flex justify-between items-center font-extrabold">
         <a href="#/{language}/" class="font-extrabold">
             <h1 class="text-white not-italic text-4xl left-5 tracking-tighter flex flex-row justify-center items-center"
                 id="header-title">
-                <img src={Logo} alt="Logo" class="h-16 ">
+                <img src={Logo} alt="Logo" class="h-16">
                 <a class="hidden sm:inline shadow-black transform-all duration-500 ease-in-out">{ is_en ? 'Post-Perception' : '後知後覺後' }</a>
             </h1>
         </a>
     </div>
-    <i id="menu-icon" class="fa-duotone fa-bars p-5 text-3xl ml-auto cursor-pointer text-3xl mx-2"
+
+    <div class="hidden lg:block mr-3 font-bold text-xl ">
+        {#each links as link (link.id)}
+            <a class="cursor-pointer text-white/70 hover:text-white mx-4 transition-colors duration-500">
+                <a href="#/{language}/{link.en}/">
+                    {is_en ? link.en.toUpperCase() : link.zh}
+                </a>
+            </a>
+        {/each}
+        <a class="cursor-pointer text-white/70 hover:text-white mx-4 transition-colors duration-500">
+            <a on:click={switch_language}>
+                {is_en ? '中' : 'En'}
+            </a>
+        </a>
+    </div>
+
+    <i id="menu-icon" class="fa-duotone fa-bars p-5 text-3xl ml-auto cursor-pointer text-3xl mx-2 lg:hidden"
        on:click={open_menu}></i>
 </div>
 
